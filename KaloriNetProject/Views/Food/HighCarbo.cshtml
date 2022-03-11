@@ -1,0 +1,58 @@
+﻿
+
+@using EntityLayer.Concrete
+@model List<Foods>
+@{
+    ViewData["Title"] = "BKIHesap";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+
+<section id="services" class="services">
+    <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+            <h2>
+                Yüksek Karbonhidrat İçeren Besinler
+            </h2>
+
+
+
+            @using (Html.BeginForm())
+            {
+
+                <p>
+                    Besin Ara :     @Html.TextBox("p")
+                    <input type="submit" value="Bul" tex placeholder="Arama..." />
+
+                </p>
+
+            }
+
+        </div>
+
+    </div>
+</section>
+<section id="more-services" class="more-services">
+    <div class="container">
+
+
+
+        <div class="row">
+            @foreach (var item in Model)
+            {
+
+                <div class="col-md-6 d-flex align-items-stretch">
+                    <div class="card" style='background-image: url("@item.FoodImage");' data-aos="fade-up" data-aos-delay="100">
+                        <div class="card-body">
+                            <h3 class="card-title"><a href="/Food/FoodDetail/@item.FoodID">@item.FoodName</a></h3>
+                            <h6 class="card-title"><a href="/Food/FoodDetail/@item.FoodID">@item.FoodCalorie Kalori - @item.Foodamount </a></h6>
+                        </div>
+                    </div>
+                </div>
+
+            }
+
+        </div>
+
+    </div>
+</section>

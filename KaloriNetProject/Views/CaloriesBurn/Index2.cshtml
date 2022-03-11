@@ -1,0 +1,202 @@
+﻿
+<br />
+<br />
+@{
+    ViewData["Title"] = "BKIHesap";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yasinanilkaya</title>
+    <meta name="description" content="yasin anil kaya |Bilgisayar Muhendisligi">
+    <meta name="keywords" content="yasin anil kaya |Bilgisayar Muhendisligi">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="~/css/global.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/main.css">
+    <link rel="stylesheet" media="(max-width:500px)" href="~/css/mobile.css">
+    <link rel="stylesheet" media="(max-width:768px)" href="~/css/tablet.css">
+
+</head>
+
+<body>
+
+
+    <h3 class="text-center heading-medium">Kaloriler Kaç Dakikada Yakılır</h3>
+
+    <br />
+
+    <form>
+        <div class="degerler">
+            <div>
+
+                <label>Kalori  :</label>
+                <input type="text" id="s1" />
+            </div>
+            <div>
+                <label>Kilonuz :</label>
+                <input type="text" id="s2" />
+            </div>
+        </div>
+    </form>
+
+
+
+
+    <section id="sosyal">
+
+
+        <div class="container">
+            <div class="sosyal">
+                <div class="sosyo">
+                    <div class="sosyal-image">
+
+                        <img src="~/Calorie-Calculator/img/metabolizmanizi-yuruyus-ile-guclendirin_5eff20e9f37a0.jpg" />
+
+                    </div>
+
+                    <div class="sosyal-info">
+                        <div class="title">
+                            Yürüyüş Yapmak
+                        </div>
+                        <div class="description"> </div>
+                        <div class="instructor"></div>
+
+                        <div class="rating" id="yuruyus">00.0</div>
+                        <div class="ratings">Dakika</div>
+                    </div>
+
+                </div>
+
+
+                <div class="sosyo">
+                    <div class="sosyal-image">
+
+                        <img src="~/Calorie-Calculator/img/bisiklet-surmek-kac-kalori.jpg" />
+                    </div>
+
+                    <div class="sosyal-info">
+                        <div class="title">
+                            Bisiklet Sürmek
+                        </div>
+
+
+                        <div class="description"> </div>
+                        <div class="instructor"></div>
+                        <div class="rating" id="bisiklet">00.0</div>
+                        <div class="ratings">Dakika</div>
+                    </div>
+
+                </div>
+
+
+
+                <div class="sosyo">
+                    <div class="sosyal-image">
+                        <img src="~/Calorie-Calculator/img/HACI-SABANCI-YUZME-HAVUZU5.jpg" />
+                    </div>
+
+                    <div class="sosyal-info">
+                        <div class="title">
+                            Yüzmek
+                        </div>
+                        <div class="description"></div>
+                        <div class="instructor"></div>
+                        <div class="rating" id="Yuzme">00.0</div>
+                        <div class="ratings">Dakika</div>
+                    </div>
+
+                </div>
+
+
+                <div class="sosyo">
+                    <div class="sosyal-image">
+                        <img src="~/Calorie-Calculator/img/yanlis-yapilan-bu-8-ev-isi-fitik-sebebi_8239_1.jpg" />
+                    </div>
+
+                    <div class="sosyal-info">
+                        <div class="title">Ev İşleri</div>
+                        <div class="description"> </div>
+                        <div class="instructor"></div>
+                        <div class="rating" id="Evisleri">00.0</div>
+                        <div class="ratings">Dakika</div>
+                    </div>
+
+                </div>
+                <div class="sosyo">
+                    <div class="sosyal-image">
+                        <img src="~/Calorie-Calculator/img/akpk.jpg" />
+                    </div>
+
+                    <div class="sosyal-info">
+                        <div class="title">Futbol Oynamak</div>
+                        <div class="description"></div>
+                        <div class="instructor"></div>
+                        <div class="rating" id="Futbol">00.0</div>
+                        <div class="ratings">Dakika</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <script>
+        var sayi1 = document.getElementById("s1");
+        var sayi2 = document.getElementById("s2");
+        var Yuzme = document.getElementById("Yuzme");
+        var Evisleri = document.getElementById("Evisleri");
+        var yuruyus = document.getElementById("yuruyus");
+        var bisiklet = document.getElementById("bisiklet");
+        var Futbol = document.getElementById("Futbol");
+
+
+        function hesapla() {
+
+
+            var FutbolDegeri = ((Number(sayi1.value) * 200) / (Number(sayi2.value) * 7 * 3.5));
+            Futbol.innerHTML = FutbolDegeri.toFixed(1);
+
+            var YuruyusDegeri = ((Number(sayi1.value) * 200) / (Number(sayi2.value) * 3.5 * 3.5));
+            yuruyus.innerHTML = YuruyusDegeri.toFixed(1);
+
+            var YuzmeDegeri = ((Number(sayi1.value) * 200) / (Number(sayi2.value) * 7.2 * 3.5));
+            Yuzme.innerHTML = YuzmeDegeri.toFixed(1);
+
+            var BisikletDegeri = ((Number(sayi1.value) * 200) / (Number(sayi2.value) * 8 * 3.5));
+            bisiklet.innerHTML = BisikletDegeri.toFixed(1);
+
+            var EvisleriDegeri = ((Number(sayi1.value) * 200) / (Number(sayi2.value) * 3 * 3.5));
+            Evisleri.innerHTML = EvisleriDegeri.toFixed(1);
+
+
+
+
+        }
+        sayi1.oninput = hesapla;
+        sayi2.oninput = hesapla;
+
+
+
+
+    </script>
+
+
+
+
+
+</body>
+
+
+
+
+
+
+</html>

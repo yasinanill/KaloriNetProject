@@ -1,0 +1,278 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Kalori Net Proje</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+
+    <link href="~/KTema/assets/img/favicon.png" rel="icon">
+    <link href="~/KTema/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link href="~/KTema/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="~/KTema/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/KTema/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/KTema/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/KTema/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="~/KTema/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="~/KTema/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="~/KTema/assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header id="header" class="fixed-top d-flex align-items-center">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <div class="logo">
+                <h1><a href="/AnaSayfa/Index">KaloriNet</a></h1>
+            </div>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="#hero">Ana Sayfa</a></li>
+
+                    <li><a class="nav-link scrollto" href="/Food/Index">Kaç Kalori</a></li>
+                    <li><a class="nav-link scrollto " href="/CaloriesBurn/Index2">Hesaplamalar</a></li>
+                    <li><a class="nav-link scrollto" href="/Recipes/Index"> Tarifler</a></li>
+                    <li><a class="nav-link scrollto" href="#pricing">Hizmetlerimiz</a></li>
+                    <li class="dropdown">
+                        <a href="#"><span>Online Testler</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+
+                            <li class="dropdown">
+
+                            </li>
+                            <li><a href="/Testler/IdealKiloHesap">İdeal Kilo Hesaplama</a></li>
+                            <li><a href="/Testler/BKIHesap">Günlük Kalori İhtiyacı Hesaplama</a></li>
+                            <li><a href="/Testler/VKIHesap">Vücut Kitle Endeksi Hesaplama</a></li>
+                            <li><a href="/Testler/BKIHesap">BKE Hesaplama</a></li>
+
+                        </ul>
+                    </li>
+                    <li><a class="nav-link scrollto" href="#contact">İletişim</a></li>
+                    <li><a class="getstarted scrollto" href="/Login/Index">GİRİŞ</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+
+        </div>
+    </header>
+    <section id="hero" class="d-flex align-items-center">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
+                    <h1 data-aos="fade-up">Hedefine ulaşmak için bize katıl!</h1>
+                    <h2 data-aos="fade-up" data-aos-delay="400">Diyet yaparken kalori hesaplamak hedefe ulaşmak için en sağlıklı yol</h2>
+                    <div data-aos="fade-up" data-aos-delay="800">
+                        <a href="#about" class="btn-get-started scrollto">Kaydol</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
+                    <img src="~/KTema/assets/img/responsive-web-design.png" class="img-fluid animated" alt="">
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <main id="main">
+
+        <br />
+        <div class="section-title" data-aos="fade-up">
+            <h2>Kaç Kalori</h2>
+            <p>Diyet yaparken tükettiğin besinlerin kalorisini öğrenebilirsin </p>
+        </div>
+
+        @await Component.InvokeAsync("FoodMainList")
+
+        <section id="features" class="features">
+            <div class="container">
+
+                <div class="section-title" data-aos="fade-up">
+                    <h2>Hİzmetlerİmİz</h2>
+                    <p>Size yardim edebilcegimiz konular</p>
+                </div>
+
+                <div class="row" data-aos="fade-up" data-aos-delay="300">
+                    <div class="col-lg-3 col-md-4">
+                        <div class="icon-box">
+                            <i class="ri-swap-line" style="color: #ffbb2c;"></i>
+                            <h3><a href="">Zayıflama-Kilo Alma</a></h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+                        <div class="icon-box">
+                            <i class="ri-bar-chart-box-line" style="color: #5578ff;"></i>
+                            <h3><a href="">Kalori Hesabı</a></h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+                        <div class="icon-box">
+                            <i class="ri-calendar-todo-line" style="color: #e80368;"></i>
+                            <h3><a href="">Kalori Takibi</a></h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
+                        <div class="icon-box">
+                            <i class="ri-run-line" style="color: #e361ff;"></i>
+                            <h3><a href="">Spor ve Egzersiz</a></h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-4">
+                        <div class="icon-box">
+                            <i class="ri-calendar-event-line" style="color: #47aeff;"></i>
+                            <h3><a href="">Günlük Menüler</a></h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-4">
+                        <div class="icon-box">
+                            <i class="ri-message-line" style="color: #ffa76e;"></i>
+                            <h3><a href="">Online Destek</a></h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-4">
+                        <div class="icon-box">
+                            <i class="ri-file-list-3-line" style="color: #11dbcf;"></i>
+                            <h3><a href="">Uzman Tavsiyeler</a></h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-4">
+                        <div class="icon-box">
+                            <i class="ri-calculator-line" style="color: #4233ff;"></i>
+                            <h3><a href="">Ceşitli Testler</a></h3>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        @*<section id="testimonials" class="testimonials section-bg">
+                <div class="container">
+
+                    <div class="section-title" data-aos="fade-up">
+                        <h2>Testimonials</h2>
+                        <p>Magnam dolores commodi suscipit eum quidem consectetur velit</p>
+                    </div>
+
+                    <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide">
+                                <div class="testimonial-wrap">
+                                    <div class="testimonial-item">
+                                        <img src="~/KTema/assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                                        <h3>Saul Goodman</h3>
+                                        <h4>Ceo &amp; Founder</h4>
+                                        <p>
+                                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                            Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="testimonial-wrap">
+                                    <div class="testimonial-item">
+                                        <img src="~/KTema/assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                                        <h3>Sara Wilsson</h3>
+                                        <h4>Designer</h4>
+                                        <p>
+                                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                            Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="testimonial-wrap">
+                                    <div class="testimonial-item">
+                                        <img src="~/KTema/assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                                        <h3>Jena Karlis</h3>
+                                        <h4>Store Owner</h4>
+                                        <p>
+                                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                            Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="testimonial-wrap">
+                                    <div class="testimonial-item">
+                                        <img src="~/KTema/assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                                        <h3>Matt Brandon</h3>
+                                        <h4>Freelancer</h4>
+                                        <p>
+                                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                            Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="testimonial-wrap">
+                                    <div class="testimonial-item">
+                                        <img src="~/KTema/assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                                        <h3>John Larson</h3>
+                                        <h4>Entrepreneur</h4>
+                                        <p>
+                                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                            Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+
+                </div>
+            </section>*@
+
+
+        @await Component.InvokeAsync("ExpertList")
+        @await Html.PartialAsync("~/Views/AnaSayfa/QUESTIONS.cshtml")
+
+        @await Html.PartialAsync("~/Views/AnaSayfa/Hakkimizda.cshtml")
+        @await Html.PartialAsync("~/Views/AnaSayfa/iletisim.cshtml")
+
+
+    </main><
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <script src="~/KTema/assets/vendor/purecounter/purecounter.js"></script>
+    <script src="~/KTema/assets/vendor/aos/aos.js"></script>
+    <script src="~/KTema/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/KTema/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="~/KTema/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="~/KTema/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="~/KTema/assets/vendor/php-email-form/validate.js"></script>
+
+
+    <script src="~/KTema/assets/js/main.js"></script>
+    @RenderBody()
+</body>
+
+</html>

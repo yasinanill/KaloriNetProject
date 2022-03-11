@@ -1,0 +1,179 @@
+﻿@using EntityLayer.Concrete
+@model List<Foods>
+@{
+    ViewData["Title"] = "FoodDetail";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yasinanilkaya</title>
+    <meta name="description" content="yasin anil kaya |Bilgisayar Muhendisligi">
+    <meta name="keywords" content="yasin anil kaya |Bilgisayar Muhendisligi">
+    <link href="~/lib/bootstrap/dist/css/bootstrap-grid.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    @*<link rel="stylesheet" href="~/css/ToplamKalori/main.css">
+        <link rel="stylesheet" media="(max-width:500px)" href="~/css/mobile.css">
+        <link rel="stylesheet" media="(max-width:768px)" href="~/css/tablet.css">
+        <link rel="stylesheet" href="~/css/global.css"   >*@
+</head>
+
+
+<body>
+    <br />
+    <div data-aos="fade-up">
+        <h2 class="" style="text-align:center">
+            Günlük Toplam Kalori Hesaplama
+        </h2>
+
+        <div>
+
+        </div>
+    </div>
+
+    @using (Html.BeginForm())
+    {
+
+        <p>
+            Besin Ara :     @Html.TextBox("p")
+            <input type="submit" value="Bul" placeholder="Arama..." />
+
+        </p>
+
+    }
+
+
+    <table class="table table-bordered">
+
+        <tr>
+
+
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+
+            <th></th>
+ 
+
+
+        </tr>
+        @foreach (var k in Model)
+        {
+
+    <tr>
+
+        <td style=" text-align:center">
+
+
+            <img src="@k.FoodImage" alt="resim" style="width:100px; height:80px;  " />
+        </td>
+
+        <td>@k.FoodName </td>
+        
+
+        <td>@k.FoodCalorie Kalori</td>
+        <td>@k.Foodamount </td>
+        <td> @k.FoodDescription.Substring(0, k.FoodDescription.Substring(0, 50).LastIndexOf(""))...<a href="/Food/FoodDetail/@k.FoodID">Devamını oku</a></td>
+
+
+        <td><a href="/Personel/PersonelGetir/" class="btn btn-primary">Ekle</a></td>
+
+
+
+    </tr>
+
+        }
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @*<section id="sosyal">
+
+            <div class="container">
+                <div class="sosyal">
+                    <div class="sosyo">
+                        <div class="sosyal-image">
+
+                            <img src="@item.FoodImage" />
+                        </div>
+                        <div class="sosyal-info">
+                            <div class="title">
+                                @item.FoodName
+                                <div class="description">
+                                    @item.Foodamount  <a class="rating" id="">
+                                        @item.FoodCalorie
+                                    <a class="ratings">Kalori</a>
+                                </a><input class="eklebutton" type="button" value="Ekle" />
+
+                                </div>
+                                <div class="inst">
+                                    @item.FoodDescription.Substring(0, item.FoodDescription.Substring(0, 50).LastIndexOf(""))...
+
+                                </div>
+
+
+
+                                <a href="/Food/FoodDetail/@item.FoodID">Devamını oku</a>
+                            </div>
+
+
+
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </section>*@
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

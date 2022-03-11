@@ -1,0 +1,85 @@
+﻿@model EntityLayer.Concrete.Expert
+@{
+    Layout = null;
+}
+
+@{
+    ViewData["Title"] = "NewFoodByExpert";
+    Layout = "~/Views/Shared/ExpertLayout.cshtml";
+}
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yasinanilkaya</title>
+    <meta name="description" content="yasin anil kaya |Bilgisayar Muhendisligi">
+    <meta name="keywords" content="yasin anil kaya |Bilgisayar Muhendisligi">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="~/css/global.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/ToplamKalori/main.css">
+    <link rel="stylesheet" media="(max-width:500px)" href="~/css/mobile.css">
+    <link rel="stylesheet" media="(max-width:768px)" href="~/css/tablet.css">
+
+</head>
+
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+
+            @using (Html.BeginForm("EditProfil", "Expert", FormMethod.Post))
+            {
+
+                <h4 class="card-title">Yeni Kayit Olustur</h4>
+                <p class="card-description"> </p>
+                <form class="forms-sample">
+                    <div class="form-group">
+                        <label for="exampleInputPassword4">Besin Ismi</label>
+                        @Html.TextBoxFor(x => x.ExpertID, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail3">Besin Kalorisi</label>
+                        @Html.TextBoxFor(x => x.ExpertName, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword4">Miktar</label>
+                        @Html.TextBoxFor(x => x.ExpertPassword, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword4">Karbonhirat Orani</label>
+                        @Html.TextBoxFor(x => x.ExpertBranch, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword4">Protein Orani</label>
+                        @Html.TextBoxFor(x => x.ExpertSocial, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword4">Yag Orani</label>
+                        @Html.TextBoxFor(x => x.ExpertAbout, new { @class = "form-control" })
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label>File upload</label>
+                        <input type="file" name="img[]" class="file-upload-default">
+                        <div class="input-group col-xs-12">
+                            <input type="text" class="form-control file-upload-info" disabled placeholder="">
+                            <span class="input-group-append">
+                                <button class="file-upload-browse btn btn-gradient-primary" type="button">Yukle</button>
+                            </span>
+                        </div>
+                    </div>
+                    
+
+                    <button type="submit" class="btn btn-gradient-primary mr-2">Kaydet</button>
+                    <button class="btn btn-light">Vazgec</button>
+                </form>
+            }
+        </div>
+    </div>
+</div>

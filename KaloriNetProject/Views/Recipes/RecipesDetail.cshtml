@@ -1,0 +1,162 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Recipes>
+@{
+    ViewData["Title"] = "RecipesDetail";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="stylesheet" href="~/delicious-master/style.css">
+</head>
+
+<body>
+
+    @foreach (var item in Model)
+    {
+
+ 
+
+    <div id="preloader">
+        <i class="circle-preloader"></i>
+        <img src="@item.RecipesImage" alt="">
+    </div>
+
+
+    <div class="search-wrapper">
+        <div class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></div>
+
+    </div>
+
+    <div class="receipe-post-area section-padding-80">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="receipe-slider owl-carousel">
+                        <img src="@item.RecipesImage" alt="">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="receipe-content-area">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-12 col-md-8">
+                        <div class="receipe-headline my-5">
+                            <span>@item.RecipesDate</span>
+                            <h2>@item.RecipesName</h2>
+                            <div class="receipe-duration">
+                                <h6>@item.RecipesCalorie Kalori @item.Foodamount</h6><h6></h6>
+                                <h6>   @item.RecipesCook Dk.</h6>
+                                
+                                <h6>@item.FoodDescription</h6>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    @*<div class="col-12 col-md-4">
+                            <div class="receipe-ratings text-right my-5">
+                                <div class="ratings">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                </div>
+
+                            </div>
+                        </div>*@
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-lg-8">
+
+                        <div class="single-preparation-step d-flex">
+                            <h4>01.</h4>
+                            <p>@item.RecipesMethod</p></div>
+
+                        <div class="single-preparation-step d-flex">
+                            <h4>02.</h4>
+                            <p>@item.RecipesMethod1</p></div>
+
+                        <div class="single-preparation-step d-flex">
+                            <h4>03.</h4>
+                            <p>@item.RecipesMethod2</p></div>
+
+                        <div class="single-preparation-step d-flex">
+                            <h4>04.</h4>
+                            <p>@item.RecipesMethod3</p>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4">
+                        <div class="ingredients">
+                            <h4>İçindekiler</h4>
+
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                <label class="custom-control-label" for="customCheck1">@item.Ingredients</label>
+                            </div>
+
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="customCheck3">
+                                <label class="custom-control-label" for="customCheck3">@item.Ingredients1</label>
+                            </div>
+
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="customCheck4">
+                                <label class="custom-control-label" for="customCheck4">@item.Ingredients2</label>
+                            </div>
+
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="customCheck5">
+                                <label class="custom-control-label" for="customCheck5">@item.Ingredients3</label>
+                            </div>
+
+                       
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="customCheck6">
+                                <label class="custom-control-label" for="customCheck6">@item.Ingredients4</label>
+                            </div>
+
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="customCheck7">
+                                <label class="custom-control-label" for="customCheck7">@item.Ingredients5</label>
+                            </div>
+
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="customCheck8">
+                                <label class="custom-control-label" for="customCheck8">@item.Ingredients6 </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    }
+
+    <script src="~/delicious-master/js/jquery/jquery-2.2.4.min.js"></script>
+
+    <script src="~/delicious-master/js/bootstrap/popper.min.js"></script>
+
+    <script src="~/delicious-master/js/bootstrap/bootstrap.min.js"></script>
+
+    <script src="~/delicious-master/js/plugins/plugins.js"></script>
+
+    <script src="~/delicious-master/js/active.js"></script>
+</body>
+
+</html>

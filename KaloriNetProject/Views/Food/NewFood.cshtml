@@ -1,0 +1,74 @@
+﻿@model EntityLayer.Concrete.Foods
+@{
+    Layout = null;
+}
+
+@{
+    ViewData["Title"] = "NewFood";
+    Layout = "~/Views/Shared/ExpertLayout.cshtml";
+}
+
+
+
+
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+
+            @using (Html.BeginForm("NewFood", "Food", FormMethod.Post))
+            {
+
+                <h4 class="card-title">Yeni Kayit Olustur</h4>
+                <p class="card-description"> </p>
+                <form class="forms-sample">
+                    <div class="form-group">
+                        <label for="exampleInputPassword4">Besin Ismi</label>
+                        @Html.TextBoxFor(x => x.FoodName, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.FoodName)
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail3">Besin Kalorisi</label>
+                        @Html.TextBoxFor(x => x.FoodCalorie, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword4">Miktar</label>
+                        @Html.TextBoxFor(x => x.Foodamount, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword4">Karbonhirat Orani</label>
+                        @Html.TextBoxFor(x => x.Foodcarbo, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword4">Protein Orani</label>
+                        @Html.TextBoxFor(x => x.FoodProtein, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword4">Yag Orani</label>
+                        @Html.TextBoxFor(x => x.FoodFat, new { @class = "form-control" })
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label>File upload</label>
+                        <input type="file" name="img[]" class="file-upload-default">
+                        <div class="input-group col-xs-12">
+                            <input type="text" class="form-control file-upload-info" disabled placeholder="">
+                            <span class="input-group-append">
+                                <button class="file-upload-browse btn btn-gradient-primary" type="button">Yukle</button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword4">Aciklama</label>
+                        @Html.TextBoxFor(x => x.FoodDescription, new { @class = "form-control" })
+                    </div>
+
+                    <button type="submit" class="btn btn-gradient-primary mr-2">Kaydet</button>
+                    <button class="btn btn-light">Vazgec</button>
+                </form>
+            }
+        </div>
+    </div>
+</div>

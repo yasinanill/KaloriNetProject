@@ -1,0 +1,19 @@
+#navbar{
+
+    flex-direction: column;
+    padding-top: 0.7rem;
+    padding-bottom: 0.9rem;
+    overflow:hidden;
+    height: 80px;
+
+
+}
+#training .items{
+    flex-direction: column;
+}
+#training .items .item{
+    width: 100%;
+}
+.sosyal .sosyo{
+    flex-direction: column;
+}

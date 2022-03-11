@@ -1,0 +1,62 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Foods>
+
+
+
+    <section id="counts" class="counts">
+        <div class="container">
+
+
+            <div class="row">
+              
+                @foreach (var item in Model)
+                {
+
+                
+
+                <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-xl-start" data-aos="fade-right" data-aos-delay="150">
+                    <img src="@item.FoodImage" alt="" class="img-fluid">
+                </div>
+
+                <div class="col-xl-7 d-flex align-items-stretch pt-4 pt-xl-0" data-aos="fade-left" data-aos-delay="300">
+                    <div class="content d-flex flex-column justify-content-center">
+                        <div class="row">
+                            <div class="col-md-6 d-md-flex align-items-md-stretch">
+                                <div class="count-box">
+                                   
+                                    <p style="font-size:40px;"><strong>@item.FoodName </strong> </p>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 d-md-flex align-items-md-stretch">
+                                <div class="count-box">
+
+                                    <span data-purecounter-start="0" data-purecounter-end="@item.FoodCalorie" data-purecounter-duration="1" class="purecounter"></span>
+                                    <p><strong style="font-size:30px;" >Kalori</strong></p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 d-md-flex align-items-md-stretch">
+                                <div class="count-box">
+                                   
+                                    <p>
+                                        
+
+                                        <strong style="font-size:30px;">@item.Foodamount</strong>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 d-md-flex align-items-md-stretch">
+                                <div class="count-box">
+
+                                    <p> <a href="/Food/Index"> <strong style="font-size:15px;">Daha fazlasına ulaşmak için Tıklayın</strong>  </a> </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- End .content-->
+                </div> }
+            </div>
+
+        </div>
+    </section>

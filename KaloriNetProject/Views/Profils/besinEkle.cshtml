@@ -1,0 +1,234 @@
+﻿@model EntityLayer.Concrete.Foods
+<head>
+
+
+    @*<link href="~/NewFolder/chosen.min.css" rel="stylesheet" />*@
+
+    @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    *@
+</head>
+<body>
+    <h2>Yeni Urun Sayfasi</h2>
+    <br />
+    <br />
+    <br />
+
+
+
+
+
+    @using (Html.BeginForm())
+    {
+
+        <br />
+
+        @Html.DropDownListFor(x => x.FoodID, (List<SelectListItem>)ViewBag.cv, new { @class="faruk"})
+        <br />
+
+
+        <br />
+        <button class=" btn btn-dark">
+            Kaydet
+        </button>
+
+
+
+    }
+
+
+    <script>
+        $(document).ready(function () {
+            $("faruk").customselect({
+
+            });
+
+
+        });
+    </script>
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     
+        @*<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>*@
+        <link href="~/NewFolder/jquery-customselect.css" rel="stylesheet" />
+
+        <link href="~/NewFolder/jquery-customselect-1.9.1.css" rel="stylesheet" />
+
+        <script src="~/scripts/jquery-customselect.js"></script>
+        <script src="~/scripts/jquery-customselect-1.9.1.js"></script>
+
+        <script src="~/scripts/jquery-customselect-1.9.1.min.js"></script>
+
+</body>
+
+
+
+
+
+
+
+
+@*<form>
+        <input type="text" value="1000" id="s1" />
+        <input type="text"  id="s2" />
+    </form>
+    <script>
+
+
+                                                var sayi1 = document.getElementById("s1");
+                                                var sayi2 = document.getElementById("s2");
+                                                var Futbol = document.getElementById("Futbol");
+
+                                                function hesapla() {
+
+                                                    var FutbolDegeri = Number(sayi1.value) * Number(sayi2.value);
+                                                    Futbol.innerHTML = FutbolDegeri.toFixed(1);
+
+                                                }
+                                                sayi1.oninput = hesapla;
+                                                sayi2.oninput = hesapla;
+
+
+
+
+    </script>
+
+
+    <div class="" id="Futbol">00.0</div>*@
+@*<div class="degerler">
+        <div>
+
+            <label>Kalori</label>
+            <input type="text" value="1000" id="s1" />
+        </div>
+        <div>
+            <label>Kilonuz :</label>
+            <input type="text"  id="s2" />
+        </div>
+    </div>
+
+    <div class="rating" id="Futbol">00.0</div>
+    <script>
+        var sayi1 = document.getElementById("s1");
+        var sayi2 = document.getElementById("s2");
+        var Yuzme = document.getElementById("Yuzme");
+
+
+        function hesapla() {
+
+
+
+            var YuzmeDegeri = ((Number(sayi1.value) * 200) / (Number(sayi2.value) * 7.2 * 3.5));
+            Yuzme.innerHTML = YuzmeDegeri.toFixed(1);
+
+
+
+
+
+
+        }
+        sayi1.oninput = hesapla;
+        sayi2.oninput = hesapla;
+
+
+
+
+    </script>*@
+
+
+
+
+@*Sayi 1 :
+    <input type="text" id="sayi1" value="0" />
+    <br />
+    <br />
+      Sayi 2 :
+    <input type="text" id="sayi2" value="0" />
+    <br />
+    <br />
+      Sonuç :
+    <input id="sonucc" type="text" name="sonuc" />
+    <input id="Button1" type="button" value="Topla" />
+
+
+
+    <script>
+        var genelToplam = 0;
+
+        $(document).ready(function (e) {
+            $('#Button1').on('click', function () {
+                var s1 = parseInt($('#sayi1').val());
+                var s2 = parseInt($('#sayi2').val());
+                var toplam = s1 + s2;
+                $('#sonucc').val(toplam);
+                genelToplam = toplam;
+            });
+        });
+    </script>*@
+
+
+
+
+@*@using EntityLayer.Concrete
+    @model List<Foods>
+
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/calisma.js"></script>
+
+
+    @using (Html.BeginForm())
+    {
+
+        <p>
+            Besin Ara :     @Html.TextBox("p")
+            <input type="submit" value="Bul" tex placeholder="Arama..." />
+
+        </p>
+
+    }
+
+
+
+    @foreach (var item in Model)
+    {
+
+        <div class="col-md-6 d-flex align-items-stretch">
+            <div class="card" style='background-image: url("@item.FoodImage");' data-aos="fade-up" data-aos-delay="100">
+                <div class="card-body">
+                    <h3 class="card-title"><a id="s1" value="@item.Foodcarbo.ToString()" href="/Food/FoodDetail/@item.FoodID"></a></h3>
+                    <h3 class="card-title"><a  href="/Food/FoodDetail/@item.FoodID">@item.FoodName</a></h3>
+                    <h6 class="card-title"><a href="/Food/FoodDetail/@item.FoodID">@item.FoodCalorie Kalori - @item.Foodamount </a></h6>
+                </div>
+            </div>
+        </div>
+
+        <input type="text" value="" id="s13">
+        <input type="text" value="2" id="s2">
+        <input type="text" id="sonuc">
+        <button id="topla">Topla</button>
+
+    }
+
+
+
+
+
+    <script>
+
+
+        $(document).ready(function () {
+
+            $("#topla").on("click", function () {
+                var sayi1 = document.getElementById("s1");
+                var sayi1 = document.getElementById("s2");
+
+                $("#sonuc").val(sayi1 + sayi2);
+            });
+        });
+    </script>*@

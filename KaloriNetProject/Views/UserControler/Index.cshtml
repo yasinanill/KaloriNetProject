@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+
+<h1>Index</h1>
+
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        
+        <div class="row">
+            <div class="col-lg-6 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Kalori Tablo</h4>
+                        <canvas id="lineChart" style="height:250px"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Kalori Tablo</h4>
+                        <canvas id="barChart" style="height:230px"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+    </div>
+
+    <footer class="footer">
+        <div class="container-fluid clearfix">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin templates </a> from Bootstrapdash.com</span>
+        </div>
+    </footer>
+
+</div>
+<script src="~/writer/assets/vendors/js/vendor.bundle.base.js"></script>
+
+<script src="~/writer/assets/vendors/chart.js/Chart.min.js"></script>
+
+<script src="~/writer/assets/js/off-canvas.js"></script>
+<script src="~/writer/assets/js/hoverable-collapse.js"></script>
+<script src="~/writer/assets/js/misc.js"></script>
+<script src="~/writer/assets/js/chart.js"></script>

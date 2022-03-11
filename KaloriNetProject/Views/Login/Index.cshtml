@@ -1,0 +1,86 @@
+﻿@model EntityLayer.Concrete.User
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/loginTemp/css/site.css">
+
+    
+
+    <style>
+        #loading, #results {
+            display: none;
+        }
+
+        #loading {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-dark">
+    <h2>Kalori Net </h2>
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+          @using (Html.BeginForm("Index", "Register", FormMethod.Post)) {
+
+
+                <h1>Hesap Oluştur</h1>
+                
+                <span></span>
+
+                @Html.TextBoxFor(x=>x.UserName  ,new { @class = "form-control", placeholder = "Isminiz" })
+                @Html.ValidationMessageFor(x=>x.UserName) 
+
+                  @Html.TextBoxFor(x=>x.UserMail, new { @class = "form-control", placeholder = "Mail" })
+                @Html.ValidationMessageFor(x=>x.UserMail)
+
+                  @Html.TextBoxFor(x=>x.UserPassword, new { @class = "form-control", placeholder = "Sifre" })
+                @Html.ValidationMessageFor(x=>x.UserPassword)
+
+
+                @*<input type="text" name="UserName" placeholder="İsim" />
+                <input type="text" name="UserMail" placeholder="Soyisim" />
+                <input type="email" name="UserPassword" placeholder="Email" />
+                <input type="password" name="UserImage" placeholder="Şifre" />*@
+                <button>Kaydol</button>
+          }
+        </div>
+        <div class="form-container sign-in-container">
+            <form action="#">
+                <h1>Giriş Yap</h1>
+                
+                <span></span>
+                <input type="email" placeholder="Email" />
+                <input type="password" placeholder="Şifre" />
+                <a href="#">Şifremi Unuttum</a>
+                <button>Giriş Yap</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Merhaba</h1>
+                    <p>Bizimle bağlantıda kalmak için lütfen kişisel bilgilerinizle giriş yapın</p>
+                    <button class="ghost" id="signIn">Giriş Yap</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hoşgeldiniz</h1>
+                    <p>Hesabın yok mu? </p>
+                    <button class="ghost" id="signUp">Kaydol</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/loginTemp/js/site.js"></script>
+</body>
+</html>
+

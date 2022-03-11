@@ -1,0 +1,32 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Foods>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>besinnmEkle</title>
+</head>
+<body>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+   
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FoodName)
+            </td>
+
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>

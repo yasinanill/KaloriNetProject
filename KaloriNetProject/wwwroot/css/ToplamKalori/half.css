@@ -1,0 +1,55 @@
+﻿
+{
+    box-sizing: border-box;
+}
+
+html, body, h1, h2, h3, ul, li, a, p,
+header, main, section, article, footer, aside, nav {
+    margin: 0;
+    padding: 0;
+}
+
+header, main, section, article, footer, aside, nav {
+    display: block;
+}
+
+
+.back_page {
+    background-color: #199;
+    display: block;
+}
+
+.first {
+    background-color: #ffd800;
+    float: left;
+    width: 50%;
+    margin :auto;
+}
+
+.second {
+    float: left;
+    width: 50%;
+}
+
+.clear {
+    clear: both;
+}
+.as {
+    clear: both;
+    float: left;
+    width: 50%;
+ 
+}
+.as2 {
+    clear: both;
+    float: right;
+    width: 50%;
+    
+}
+.img {
+    clear: both;
+    float: left;
+    width: 50%;
+    padding: 0 10px 10px 0;
+}
+
