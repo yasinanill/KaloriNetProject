@@ -1,0 +1,156 @@
+﻿@model List<RecordListModel>
+@{
+    ViewData["Title"] = "GetRecords";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+
+
+<div style="max-width:1200px; margin-left:400px; margin-top:100px;" >
+    <div class="text-center">
+
+        <div class="card">
+            <div class="card-header">
+                <div class="chart">
+                    <canvas id="barchart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+    <script>
+    var barCanvas = document.getElementById("barchart");
+    var Kalori = [];//these are all javascript array variables
+    var Chemistry = [];
+    var Biology = [];
+    var Mathematics = [];
+    var Mathematicss = [];
+
+       @if (Model.Count > 0)
+       {
+           foreach (var item in Model)
+           {            @:Kalori.push(@item.TotalPrice());
+            @:Chemistry.push(@item.TotalPrice());
+            @:Biology.push(@item.TotalPrice());
+            @:Mathematics.push(@item.TotalPrice());
+            @:Mathematicss.push(@item.TotalPrice());
+           }
+       }
+                   var Kalori = {
+                       label: 'Kalori',
+                       data: Kalori,
+        backgroundColor: 'rgb(255, 99, 132)',
+        borderWidth: 0,
+        lineTension: 0,
+    };
+
+
+
+               var datasetvalues = {
+                   labels: ["", "", "", "", "", "", "", "", "", "", "", ""],//x-axis label values
+                   datasets: [Kalori, Chemistry,]//y-axis
+           };
+           var chartOptions = {
+        scales: {
+            xAxes: [{
+                barPercentage: 1,//Percent (0-1) of the available width each bar should
+                categoryPercentage: 1,//Percent (0-1) of the available width each category
+            }],
+            yAxes: [{
+       barPercentage: 1,
+                categoryPercentage: 0.6,
+                ticks: {
+           beginAtZero: true
+                }
+       }],
+        }
+    };
+       var barChart = new Chart(barCanvas, {
+
+           type: 'bar',
+           data: datasetvalues,
+           options: chartOptions
+    });
+    </script>
+</div>
+
+<h1 style="margin-left:250px; margin-top:80px;   flex-wrap:wrap">Kayıtlarınız</h1>
+<div style="margin-left:200px; margin-top:40px;  flex-direction:row">
+
+
+
+    <div style="margin-left:40px; margin-top:40px;  flex-direction:row">
+        @foreach (var item in Model)
+        {
+
+            <table style="margin-left:120px; margin-top:40px; max-width:1200px;  flex:auto" class="table table-bordered table-sm mb-3">
+                <thead class="bg-primary">
+                    <tr>
+                        <td colspan="2">Kayit Id: #@item.recordNumber</td>
+                        <th>Kalori</th>
+                        <th>Adet</th>
+
+
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var recordItem in item.RecordItems)
+                    {
+                        <tr>
+                            <td></td>
+                            <td>
+                                @recordItem.Name
+                            </td>
+                            <td>@recordItem.Calorie</td>
+                            <td>@recordItem.Quantity</td>
+
+                        </tr>
+                    }
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td style="font-size:23px">Toplam Kalori </td>
+                        <td style="font-size:23px"> @item.TotalPrice().ToString("")</td>
+                        <td></td>
+
+                    </tr>
+
+
+
+                </tfoot>
+            </table>
+
+
+            <div>
+                <div style="margin-left:150px; margin-top:5px; flex-wrap:wrap">
+                    <a style="font-size:21px; font-weight:bold">
+                        Tarih : @item.recordDate
+                    </a>
+
+                </div>
+                <div style="margin-left:150px; margin-top:5px; max-width:1200px; flex-wrap:wrap">
+                    <a>
+                        Notunuz  : @item.recordNote
+                    </a>
+
+                </div>
+            </div>
+
+
+
+
+
+
+        }
+
+
+    </div>
+</div>
+
+

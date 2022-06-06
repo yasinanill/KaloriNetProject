@@ -1,0 +1,226 @@
+﻿@model CartModel
+@{
+    ViewData["Title"] = "FoodDetail";
+    Layout = "~/Views/Shared/MainLayout2.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Circle Progress bar</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/progresbarr/style.css">
+
+    <script src="/progresbarr/jquery-3.3.1.min.js"></script>
+    <script src="/progresbarr/circle-progress.min.js"></script>
+    <script src="/progresbarr/main.js"></script>
+</head>
+<body style="background-color:cornsilk">
+
+
+    <section class="progressbar-section">
+
+        <div class="containerr">
+            <div class="skill-part">
+                <div class="skill-item">
+                    <div class="first circle" data-skill-level="@Model.YuzdeKaloris()">
+                        <h2></h2>
+
+                    </div><span style="background-color:lightcyan; border-radius:20px; font-size:30px; text-align: center" class="sk-name"> Kalan:  @(2000 - Model.TotalCalorie())/kcal</span>
+                </div>
+
+                <div style="justify-content:center ; margin-top:50px; padding:10px; margin-left:80px; font-size:50px; text-align: center">
+                    <span style=" font-size:60px; text-align: center" id="s1" class="sk-name">@Model.TotalCalorie()  /  2000</span>
+                    <span style=" font-size:60px; text-align: center" id="s2" class="sk-name">kcal</span>
+
+                </div>
+                <div style=" flex-direction:column; max-width:240px; margin-top:60px ; margin-left:40px">
+                    <a style="padding: 10px; margin: 20px; font-size: 20px; " asp-area="" asp-controller="Food" asp-action="ProductDetail">Eklemeye Devam Et</a>
+                    <a style="padding: 10px; margin: 20px; font-size: 20px; " asp-area="" asp-controller="Cart" asp-action="Checkout">Kaydet</a>
+                   
+                    <div  style="  margin-top:60px ; margin-left:0px">
+                        @if ((2000 - Model.TotalCalorie()) <= 200)
+                        {
+                            <a style="padding: 10px; color: black; margin: 20px; font-size: 20px; " asp-area="" asp-controller="Recipes" asp-action="HighCarbo">Tarif Önerileri</a>
+                        }
+                        else if ((2000 - Model.TotalCalorie()) <= 400)
+                        {
+
+                            <a style="padding: 10px; color: black; margin: 20px; font-size: 20px; " asp-area="" asp-controller="Recipes" asp-action="GetFoodByCal1">Tarif Önerileri</a>
+                        }
+                        else if ((2000 - Model.TotalCalorie()) <= 500)
+                        {
+
+                            <a style="padding: 10px; color:black; margin: 20px; font-size: 20px; " asp-area="" asp-controller="Recipes" asp-action="GetFoodByCal2">Tarif Önerileri</a>
+                        }
+                        else if ((2000 - Model.TotalCalorie()) <= 1000)
+                        {
+
+                            <a style="padding: 10px; color: black; margin: 20px; font-size: 20px; " asp-area="" asp-controller="Recipes" asp-action="GetFoodByCal3">Tarif Önerileri</a>
+                        }
+
+                                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <section class="progressbar-section">
+
+
+        <div class="containerr">
+            <div class="skill-part">
+
+
+                <div class="skill-item">
+                    <div class="second circle" data-skill-level="@Model.Yuzdekarbonhidrat()">
+                        <h2></h2>
+                        <span class="sk-name"  style="background-color: lightcyan; border-radius: 20px;">Karbonhidrat: @Model.TotalCarbo() gr.</span>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="third circle" data-skill-level="@Model.Yuzdeprotein() ">
+                        <h2></h2>
+                        <span class="sk-name" style="background-color: lightcyan; border-radius: 20px;">Protein:  @Model.TotalPRotein() gr.</span>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="fourth circle" data-skill-level="@Model.Yuzdeyag()">
+                        <h2></h2>
+                        <span class="sk-name" style="background-color: lightcyan; border-radius: 20px;">Yağ: @Model.Totalfat() gr.</span>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+
+
+
+    <div class="px-4 px-lg-0">
+
+
+
+
+        <div class="pb-5">
+            <div class="container"  style="max-width:1400px">
+                <div class="row">
+                    <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
+
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="border-0 bg-light">
+                                            <div class="p-2 px-3 text-uppercase">Besin</div>
+                                        </th>
+                                        <th scope="col" class="border-0 bg-light">
+                                            <div class="py-2 text-uppercase">Kalori</div>
+                                        </th>
+                                        <th scope="col" class="border-0 bg-light">
+                                            <div class="py-2 text-uppercase">Adet</div>
+                                        </th>
+
+                                        <th scope="col" class="border-0 bg-light">
+                                            <div class="py-2 text-uppercase">Kaldir</div>
+
+                                        </th>
+                                    </tr>
+                                </thead>
+                                @foreach (var k in Model.CartItem)
+                                {
+
+                                    <tbody>
+
+
+
+                                        <tr>
+                                            <th scope="row" class="border-0">
+                                                <div class="p-2">
+                                                    <img src="@k.imageUrl" alt="" width="70" class="img-fluid rounded shadow-sm">
+                                                    <div class="ml-3 d-inline-block align-middle">
+                                                        <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">@k.Name</a></h5><span class="text-muted font-weight-normal font-italic d-block">@k.amount</span>
+                                                    </div>
+                                                </div>
+                                            </th>
+                                            <td class="border-0 align-middle"><strong>@k.Calorie</strong></td>
+
+                                            <td class="border-0 align-middle"><strong>@k.Quantity</strong></td>
+
+                                            <td class="border-0 align-middle">
+
+
+                                                <form asp-controller="Cart" asp-action="DeleteFromCart" method="post">
+                                                    <input type="hidden" name="productId" value="@k.ProductID" />
+                                                    <button type="submit" class="btn btn-danger btn-sm">
+                                                        <i class="fa fa-times fa-fw"></i>
+                                                    </button>
+                                                </form>
+
+                                            </td>
+                                        </tr>
+
+
+
+                                    </tbody>
+                                }
+                            </table>
+                        </div>
+                        @if (Model.CartItem.Count > 0)
+                        {
+
+
+                            <div class="text-left">
+                                <h4>DETAYLAR</h4>
+                            </div>
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <th>Toplam Kalori (/kcal)</th>
+                                        <td style="font-size:22px; font-weight:700"> @Model.TotalCalorie().ToString("") </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Toplam Karbonhidrat (gr)</th>
+                                        <td > @Model.TotalCarbo().ToString("").0 </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Toplam Protein (gr)</th>
+                                        <td >@Model.TotalPRotein().ToString("").0 </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Toplam Yag (gr) </th>
+                                        <td>@Model.Totalfat().ToString("").0 </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+
+
+
+
+
+                        }
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+</body>
+</html>

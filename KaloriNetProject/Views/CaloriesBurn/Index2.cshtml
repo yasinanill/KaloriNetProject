@@ -33,11 +33,11 @@
     <br />
 
     <form>
-        <div class="degerler">
+        <div class="degerler"  style="max-width:1200px; margin-left:520px;">
             <div>
 
                 <label>Kalori  :</label>
-                <input type="text" id="s1" />
+                <input type="text" style=" margin-left:13px;" id="s1" />
             </div>
             <div>
                 <label>Kilonuz :</label>
@@ -143,6 +143,34 @@
                     </div>
 
                 </div>
+                <div class="sosyo">
+                    <div class="sosyal-image">
+                        <img src="~/Calorie-Calculator/img/kosu2.png" />
+                    </div>
+
+                    <div class="sosyal-info">
+                        <div class="title">Kosu (Orta Tempo)</div>
+                        <div class="description"></div>
+                        <div class="instructor"></div>
+                        <div class="rating" id="Kosu">00.0</div>
+                        <div class="ratings">Dakika</div>
+                    </div>
+
+                </div>
+                <div class="sosyo">
+                    <div class="sosyal-image">
+                        <img src="~/Calorie-Calculator/img/kosu.png" />
+                    </div>
+
+                    <div class="sosyal-info">
+                        <div class="title">Kosu (Hizli Tempo)</div>
+                        <div class="description"></div>
+                        <div class="instructor"></div>
+                        <div class="rating" id="KosuHizli">00.0</div>
+                        <div class="ratings">Dakika</div>
+                    </div>
+
+                </div>
             </div>
         </div>
 
@@ -156,7 +184,8 @@
         var yuruyus = document.getElementById("yuruyus");
         var bisiklet = document.getElementById("bisiklet");
         var Futbol = document.getElementById("Futbol");
-
+                var Kosu = document.getElementById("Kosu");
+        var KosuHizli = document.getElementById("KosuHizli");
 
         function hesapla() {
 
@@ -176,7 +205,11 @@
             var EvisleriDegeri = ((Number(sayi1.value) * 200) / (Number(sayi2.value) * 3 * 3.5));
             Evisleri.innerHTML = EvisleriDegeri.toFixed(1);
 
+                   var KosuDegeri = ((Number(sayi1.value) * 200) / (Number(sayi2.value) * 7.5 * 3.5));
+            Kosu.innerHTML = KosuDegeri.toFixed(1);
 
+            var KosuhizliDegeri = ((Number(sayi1.value) * 200) / (Number(sayi2.value) * 9.5 * 3.5));
+            KosuHizli.innerHTML = KosuhizliDegeri.toFixed(1);
 
 
         }

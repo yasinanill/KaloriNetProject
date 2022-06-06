@@ -34,7 +34,8 @@
         <div class="container d-flex align-items-center justify-content-between">
 
             <div class="logo">
-                <h1><a href="/AnaSayfa/Index">KaloriNet</a></h1>
+                <h1><a asp-controller="AnaSayfa" asp-action="Index" >KaloriNet</a></h1>
+                
             </div>
 
             <nav id="navbar" class="navbar">
@@ -44,7 +45,8 @@
                     <li><a class="nav-link scrollto" href="/Food/Index">Kaç Kalori</a></li>
                     <li><a class="nav-link scrollto " href="/CaloriesBurn/Index2">Hesaplamalar</a></li>
                     <li><a class="nav-link scrollto" href="/Recipes/Index"> Tarifler</a></li>
-                    <li><a class="nav-link scrollto" href="#pricing">Hizmetlerimiz</a></li>
+                    <li><a class="nav-link scrollto" href="/Food/ProductDetail">Kaç Kalori Aldım?</a></li>
+
                     <li class="dropdown">
                         <a href="#"><span>Online Testler</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
@@ -60,7 +62,21 @@
                         </ul>
                     </li>
                     <li><a class="nav-link scrollto" href="#contact">İletişim</a></li>
-                    <li><a class="getstarted scrollto" href="/Login/Index">GİRİŞ</a></li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+
+                        <li><a class="getstarted scrollto" asp-area="" asp-controller="Account" asp-action="UserProfil">@User.Identity.Name</a></li>
+
+                    }
+
+
+                    else
+                    {
+                        <li><a class="getstarted scrollto" asp-area="" asp-controller="Account" asp-action="Login">GİRİŞ</a></li>
+
+                    }
+
+
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>

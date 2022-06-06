@@ -18,7 +18,7 @@ namespace KaloriNetProject.Controllers
 
         FoodManager fm = new FoodManager(new EfFoodRepository());
         ProfilManager pm = new ProfilManager(new EfProfilRepository());
-        EfFoodRepository efFoodRepository = new EfFoodRepository();
+        EfFoodRepository efFoodRepository =( new EfFoodRepository());
         public IActionResult Index()
         {
             var values = pm.GetList();

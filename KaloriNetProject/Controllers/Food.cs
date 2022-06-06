@@ -3,6 +3,7 @@ using BusinessLayer.ValidationResult;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
+using KaloriNetProject.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -17,7 +18,9 @@ namespace KaloriNetProject.Controllers
     {
 
         FoodManager fm = new FoodManager(new EfFoodRepository());
+        ProductManager pm = new ProductManager(new EfProductRepository());
         EfFoodRepository efFoodRepository = new EfFoodRepository();
+        EfProductRepository efProductRepository = new EfProductRepository();
         public IActionResult Index(string p)
         {
             if (!string.IsNullOrEmpty(p))
@@ -40,7 +43,17 @@ namespace KaloriNetProject.Controllers
             var values = fm.GetFoodByID(id);
             return View(values);
 
-        } 
+        }
+        public IActionResult ProductDetail(string p)
+        {
+            if (!string.IsNullOrEmpty(p))
+            {
+                return View(efProductRepository.GetListAll(x => x.Name.Contains(p) ));
+            }
+            var values = pm.GetList();
+            return View(values);
+
+        }
         public IActionResult FoodCalorieBurn(int id)
         {
             var values = fm.GetFoodByID(id);
@@ -105,7 +118,7 @@ namespace KaloriNetProject.Controllers
             if (result.IsValid)
             {
                 s.FoodStatus = true;
-                efFoodRepository.Add(s);
+                efFoodRepository.Create(s);
                 return RedirectToAction("Index", "Food");
             }
             else
@@ -125,6 +138,12 @@ namespace KaloriNetProject.Controllers
                 return View(efFoodRepository.GetListAll(x => x.FoodName == p));
             }
             var values = fm.GetList();
+            return View(values);
+
+        }
+        public IActionResult Details(int id)
+        {
+            var values = pm.GetPRoductByID(id);
             return View(values);
 
         }

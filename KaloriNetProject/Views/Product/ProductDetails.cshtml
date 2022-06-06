@@ -1,0 +1,12 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Product>
+@{
+    ViewData["Title"] = "ProductDetails";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+
+<h1>ProductDetails</h1>
+
+@foreach (var item in Model)
+{
+    <p>@item.Protein</p>
+}

@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\progresbarr\donut.css" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\delicious-master\.sass-cache\9dcd260a98b05df5e2bbaebb993f2e918e16ad1d\style.scssc" />
     <None Include="wwwroot\delicious-master\.sass-cache\9dcd260a98b05df5e2bbaebb993f2e918e16ad1d\_fonts.scssc" />
     <None Include="wwwroot\delicious-master\.sass-cache\9dcd260a98b05df5e2bbaebb993f2e918e16ad1d\_mixin.scssc" />
@@ -26,11 +30,19 @@
     <None Include="wwwroot\delicious-master\.sass-cache\eb65a9acf275cb72706472a84a7409ec6f3ac36a\_responsive.scssc" />
     <None Include="wwwroot\delicious-master\.sass-cache\eb65a9acf275cb72706472a84a7409ec6f3ac36a\_theme_color.scssc" />
     <None Include="wwwroot\delicious-master\.sass-cache\eb65a9acf275cb72706472a84a7409ec6f3ac36a\_variables.scssc" />
+    <None Include="wwwroot\progresbarr\circle-progress.min.js" />
+    <None Include="wwwroot\progresbarr\index.html" />
+    <None Include="wwwroot\progresbarr\jquery-3.3.1.min.js" />
+    <None Include="wwwroot\progresbarr\main.js" />
+    <None Include="wwwroot\progresbarr\donut.css" />
+    <None Include="wwwroot\progresbarr\style.css" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="FluentValidation" Version="10.3.3" />
     <PackageReference Include="FluentValidation.AspNetCore" Version="10.3.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.9">
       <PrivateAssets>all</PrivateAssets>
@@ -42,6 +54,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="SendGrid" Version="9.5.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -52,6 +65,13 @@
 
   <ItemGroup>
     <Folder Include="Views\RecipesController1\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Views\Shared\MainLayout.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

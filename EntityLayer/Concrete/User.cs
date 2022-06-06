@@ -21,7 +21,7 @@ namespace EntityLayer.Concrete
         public string UserPoint{ get; set; }
         public bool UserStatus { get; set; }
         public string UserImage { get; set; }  
-        //public int ProfilID { get; set; }
+       
       
 
     }

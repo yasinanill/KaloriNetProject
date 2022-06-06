@@ -5,86 +5,150 @@
     Layout = "~/Views/Shared/MainLayout.cshtml";
 }
 
-<section id="services" class="services">
-    <div class="container">
 
-        <div class="section-title" data-aos="fade-up">
-            <h2>
-                Kaç  KALORİ
-            </h2>
+<head>
+
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ </head>
+<body>
+    <section id="services" class="services">
+        <div class="container">
+
+            <div class="section-title" data-aos="fade-up">
+                <h2>
+                    Kaç  KALORİ
+                </h2>
 
 
 
-            @using (Html.BeginForm())
-            {
+                @using (Html.BeginForm())
+                {
+                    @*<div class="searchbox">
 
-                <p>
-                    Besin Ara :     @Html.TextBox("p")
-                    <input type="submit" value="Bul" tex placeholder="Arama..." />
+                        <div class="search_box">
 
-                </p>
+                            <form>
 
-            }
+                                <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
 
-        </div>
+                                <input type="text" placeholder="Search...">
 
-        <section id="features" class="features">
-            <div class="container">
+                               
 
-                <div class="row" data-aos="fade-up" data-aos-delay="300">
-                    <div class="col-lg-3 col-md-4">
-                        <div class="icon-box">
-                            <i class="ri-swap-line" style="color: #ffbb2c;"></i>
-                            <h3><a href="/Food/CalString">100 KALORİ  </a></h3>
+                            </form>
+
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-                        <div class="icon-box">
-                            <i class="ri-bar-chart-box-line" style="color: #5578ff;"></i>
-                            <h3><a href="/Food/HighProtein">Protein Zengini</a></h3>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-                        <div class="icon-box">
-                            <i class="ri-bar-chart-box-line" style="color: #5578ff;"></i>
-                            <h3><a href="/Food/HighCarbo">Yüksek Yarbonhidrat </a></h3>
-                        </div>
-                    </div>
 
-                    <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-                        <div class="icon-box">
-                            <i class="ri-bar-chart-box-line" style="color: #5578ff;"></i>
-                            <h3><a href="/Food/HighFat">Yağ Oranı Yüksek</a></h3>
-                        </div>
-                    </div>
+                    </div>*@
+                    <p>
+                        Besin Ara :     @Html.TextBox("p")
+                        <input type="submit" value="Bul" tex placeholder="Arama..." />
 
-                </div>
+                    </p>
+
+                }
 
             </div>
-        </section>
 
+            <section id="features" class="features">
+                <div class="container">
 
-    </div>
-</section>
-<section id="more-services" class="more-services">
-    <div class="container">
-
-        <div class="row">
-            @foreach (var item in Model)
-            {
-
-                <div class="col-md-6 d-flex align-items-stretch">
-                    <div class="card" style='background-image: url("@item.FoodImage");' data-aos="fade-up" data-aos-delay="100">
-                        <div class="card-body">
-                            <h3 class="card-title"><a href="/Food/FoodDetail/@item.FoodID">@item.FoodName</a></h3>
-                            <h6 class="card-title"><a href="/Food/FoodDetail/@item.FoodID">@item.FoodCalorie Kalori - @item.Foodamount </a></h6>
+                    <div class="row" data-aos="fade-up" data-aos-delay="300">
+                        <div class="col-lg-3 col-md-4">
+                            <div class="icon-box">
+                                <i class="ri-swap-line" style="color: #ffbb2c;"></i>
+                                <h3><a href="/Food/CalString">100 KALORİ  </a></h3>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                        <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+                            <div class="icon-box">
+                                <i class="ri-bar-chart-box-line" style="color: #5578ff;"></i>
+                                <h3><a href="/Food/HighProtein">Protein Zengini</a></h3>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+                            <div class="icon-box">
+                                <i class="ri-bar-chart-box-line" style="color: #5578ff;"></i>
+                                <h3><a href="/Food/HighCarbo">Yüksek Yarbonhidrat </a></h3>
+                            </div>
+                        </div>
 
-            }
+                        <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+                            <div class="icon-box">
+                                <i class="ri-bar-chart-box-line" style="color: #5578ff;"></i>
+                                <h3><a href="/Food/HighFat">Yağ Oranı Yüksek</a></h3>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
 
         </div>
+    </section>
+    <section id="more-services" class="more-services">
+        <div class="container">
 
-    </div>
-</section>
+            <div class="row">
+                @foreach (var item in Model)
+                {
+
+                    <div class="col-md-6 d-flex align-items-stretch">
+                        <div class="card" style='background-image: url("@item.FoodImage");' data-aos="fade-up" data-aos-delay="100">
+                            <div class="card-body">
+                                <h3 class="card-title"><a href="/Food/FoodDetail/@item.FoodID">@item.FoodName</a></h3>
+                                <h6 class="card-title"><a href="/Food/FoodDetail/@item.FoodID">@item.FoodCalorie Kalori - @item.Foodamount </a></h6>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+
+            </div>
+
+        </div>
+    </section>
+    <style>
+
+
+
+        .searchbox {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            position: absolute;
+        }
+
+        .search_box {
+            border-radius: 40px;
+            background-color: white;
+        }
+
+        form {
+            margin: 0;
+        }
+
+        input {
+            border: none;
+            margin: 15px 10px 15px 5px;
+            font-size: 20px;
+            outline: none;
+            color: #17202A;
+        }
+
+        .search_box button i {
+            font-size: 20px;
+            margin: 0px 10px;
+            color: #0063D4;
+        }
+
+        button {
+            background: transparent;
+            border: none;
+            outline: none;
+        }
+    </style>
+</body>

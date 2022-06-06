@@ -9,14 +9,12 @@ namespace DataAccessLayer.Abstract
 {
     public interface IGenericDal<T> where T :class
     {
-        void Add(T t);
+        void Create(T t);
         void Update(T t);
         void Delete(T t);
         List<T> GetListAll();
         T GetById(int id);
-
         List<T> GetListAll(Expression<Func<T,bool>>filter);
-
-
-    }
+        T GetByUserId(string id);
+        }
 }

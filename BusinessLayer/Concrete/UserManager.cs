@@ -37,7 +37,7 @@ namespace BusinessLayer.Concrete
 
         public void UserAdd(User user)
         {
-            _userDal.Add(user);
+            _userDal.Create(user);
         }
 
         public void UserDelete(User user)

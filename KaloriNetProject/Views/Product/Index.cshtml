@@ -1,0 +1,22 @@
+﻿@model ProductListModel
+@{
+    ViewData["Title"] = "FoodDetail";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+<div class="row">
+    <div class="col-md-3">
+
+    </div>
+    <div class="col-md-9">
+
+
+
+        <div class="row">
+            @foreach (var product in Model.Products)
+            {
+                <partial name="_product" for="@product" />
+            }
+        </div>
+
+    </div>
+</div>

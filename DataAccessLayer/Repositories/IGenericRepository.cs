@@ -12,26 +12,26 @@ namespace DataAccessLayer.Repositories
     public class IGenericRepository<T> : IGenericDal<T> where T : class
     {
         Context c = new Context();
-        public void Add(T t)
+        public void Create(T t)
         {
             Context c = new Context();
             c.Add(t);
             c.SaveChanges();
-        }
-
-        public void Delete(T t)
+        } public void Delete(T t)
         {
             Context c = new Context();
             c.Remove(t);
             c.SaveChanges();
         }
-
         public T GetById(int id)
         {
             Context c = new Context();
             return c.Set<T>().Find(id);
         }
-
+        public T GetByUserId(string id)
+        {
+            throw new NotImplementedException();
+        }
         public List<T> GetListAll()
         {
             Context c = new Context();
@@ -44,7 +44,7 @@ namespace DataAccessLayer.Repositories
              return c.Set<T>().Where(filter).ToList();
         }
 
-        public void Update(T t)
+        public virtual void Update(T t)
         {
             Context c = new Context();
             c.Update(t);

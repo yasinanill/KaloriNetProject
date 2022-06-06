@@ -27,7 +27,7 @@ namespace BusinessLayer.Concrete
 
         public void ProfilAdd(Profil profil)
         {
-            _profilDal.Add(profil);
+            _profilDal.Create(profil);
         }
 
         public void ProfilDelete(Profil profil)

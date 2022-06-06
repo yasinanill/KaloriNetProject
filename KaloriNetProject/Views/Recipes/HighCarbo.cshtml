@@ -1,0 +1,53 @@
+﻿
+@using EntityLayer.Concrete
+@model List<Recipes>
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+
+
+
+<link rel="stylesheet" href="~/delicious-master/style.css">
+<section class="best-receipe-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading">
+                    <h3> Tarifler </h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            @foreach (var item in Model)
+            {
+
+
+
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-best-receipe-area mb-30">
+                        <img src="@item.RecipesImage" alt="">
+                        <div class="receipe-content">
+                            <a href="/Recipes/RecipesDetail/@item.RecipesID">
+                                <h3>@item.RecipesName</h3>  <h5>@item.RecipesCalorie Kalori</h5>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<script src="~/delicious-master/js/jquery/jquery-2.2.4.min.js"></script>
+
+<script src="~/delicious-master/js/bootstrap/popper.min.js"></script>
+
+<script src="~/delicious-master/js/bootstrap/bootstrap.min.js"></script>
+
+<script src="~/delicious-master/js/plugins/plugins.js"></script>
+
+<script src="~/delicious-master/js/active.js"></script>

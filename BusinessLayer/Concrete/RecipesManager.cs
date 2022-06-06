@@ -56,5 +56,27 @@ namespace BusinessLayer.Concrete
         {
             throw new NotImplementedException();
         }
+
+        public List<Recipes> GetFoodByCal()
+        {
+            return _recipesDal.GetListAll(x => x.RecipesCalorie  <= 200);
+
+        }
+        public List<Recipes> GetRecipesByCal()
+        {
+            return _recipesDal.GetListAll(x => x.RecipesCalorie <= 300);
+
+        }
+        public List<Recipes> GetRecipesByCal2()
+        {
+            return _recipesDal.GetListAll(x => x.RecipesCalorie <= 400);
+
+        }
+        public List<Recipes> GetFoodByCal3()
+        {
+            return _recipesDal.GetListAll(x => x.RecipesCalorie <= 800);
+
+        }
+
     }
 }

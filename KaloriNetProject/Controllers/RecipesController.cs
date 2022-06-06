@@ -24,5 +24,34 @@ namespace KaloriNetProject.Controllers
             var values = rm.GetRecipesByID(id);
             return View(values);
         }
+        public IActionResult HighCarbo(string p)
+        {
+     
+            var values = rm.GetFoodByCal();
+            return View(values);
+
+        }
+
+        public IActionResult GetFoodByCal1(string p)
+        {
+
+            var values = rm.GetRecipesByCal();
+            return View(values);
+
+        }
+        public IActionResult GetFoodByCal2(string p)
+        {
+
+            var values = rm.GetRecipesByCal2();
+            return View(values);
+
+        }
+        public IActionResult GetFoodByCal3(string p)
+        {
+
+            var values = rm.GetFoodByCal3();
+            return View(values);
+
+        }
     }
 }

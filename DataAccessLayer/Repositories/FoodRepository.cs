@@ -14,7 +14,7 @@ namespace DataAccessLayer.Repositories
     {
         Context c = new Context();
 
-        public void Add(Foods t)
+        public void Create(Foods t)
         {
             throw new NotImplementedException();
         }
@@ -36,6 +36,11 @@ namespace DataAccessLayer.Repositories
             c.SaveChanges();
         }
 
+        public IQueryable<Foods> GetAll(Expression<Func<Foods, bool>> filter = null)
+        {
+            throw new NotImplementedException();
+        }
+
         public Foods GetbyId(int id)
         {
 
@@ -43,6 +48,11 @@ namespace DataAccessLayer.Repositories
         }
 
         public Foods GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Foods GetByUserId(string id)
         {
             throw new NotImplementedException();
         }

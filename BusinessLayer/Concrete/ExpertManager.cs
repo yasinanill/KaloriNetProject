@@ -25,7 +25,7 @@ namespace BusinessLayer.Concrete
         }
         public void ExpertAdd(Expert expert)
         {
-            _expertDal.Add(expert);
+            _expertDal.Create(expert);
         }
 
         public void ExpertDelete(Expert expert)

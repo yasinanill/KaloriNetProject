@@ -29,7 +29,7 @@ namespace BusinessLayer.Concrete
 
         public void FoodAdd(Foods foods)
         {
-            _foodDal.Add(foods);
+            _foodDal.Create(foods);
         }
 
         public void FoodDelete(Foods foods)

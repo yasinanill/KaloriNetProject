@@ -2,6 +2,10 @@
 @{
     Layout = null;
 }
+@{
+    ViewData["Title"] = "FoodDetail";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
 
 <!doctype html>
 <html lang="en">
@@ -13,7 +17,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="~/loginTemp/css/site.css">
 
-    
+
 
     <style>
         #loading, #results {
@@ -29,34 +33,35 @@
     <h2>Kalori Net </h2>
     <div class="container" id="container">
         <div class="form-container sign-up-container">
-          @using (Html.BeginForm("Index", "Register", FormMethod.Post)) {
+            @using (Html.BeginForm("Index", "Registers", FormMethod.Post))
+            {
 
 
                 <h1>Hesap Oluştur</h1>
-                
+
                 <span></span>
 
-                @Html.TextBoxFor(x=>x.UserName  ,new { @class = "form-control", placeholder = "Isminiz" })
-                @Html.ValidationMessageFor(x=>x.UserName) 
+                @Html.TextBoxFor(x => x.UserName, new { @class = "form-control", placeholder = "Isminiz" })
+                @Html.ValidationMessageFor(x => x.UserName)
 
-                  @Html.TextBoxFor(x=>x.UserMail, new { @class = "form-control", placeholder = "Mail" })
-                @Html.ValidationMessageFor(x=>x.UserMail)
+                @Html.TextBoxFor(x => x.UserMail, new { @class = "form-control", placeholder = "Mail" })
+                @Html.ValidationMessageFor(x => x.UserMail)
 
-                  @Html.TextBoxFor(x=>x.UserPassword, new { @class = "form-control", placeholder = "Sifre" })
-                @Html.ValidationMessageFor(x=>x.UserPassword)
+                @Html.TextBoxFor(x => x.UserPassword, new { @class = "form-control", placeholder = "Sifre" })
+                @Html.ValidationMessageFor(x => x.UserPassword)
 
 
                 @*<input type="text" name="UserName" placeholder="İsim" />
-                <input type="text" name="UserMail" placeholder="Soyisim" />
-                <input type="email" name="UserPassword" placeholder="Email" />
-                <input type="password" name="UserImage" placeholder="Şifre" />*@
+                    <input type="text" name="UserMail" placeholder="Soyisim" />
+                    <input type="email" name="UserPassword" placeholder="Email" />
+                    <input type="password" name="UserImage" placeholder="Şifre" />*@
                 <button>Kaydol</button>
-          }
+            }
         </div>
         <div class="form-container sign-in-container">
             <form action="#">
                 <h1>Giriş Yap</h1>
-                
+
                 <span></span>
                 <input type="email" placeholder="Email" />
                 <input type="password" placeholder="Şifre" />

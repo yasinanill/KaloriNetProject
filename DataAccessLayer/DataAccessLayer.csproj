@@ -18,11 +18,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Context\" />
+    <ProjectReference Include="..\EntityLayer\EntityLayer.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EntityLayer\EntityLayer.csproj" />
+    <Folder Include="Context\" />
   </ItemGroup>
 
 </Project>

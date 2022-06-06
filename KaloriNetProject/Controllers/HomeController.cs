@@ -1,4 +1,5 @@
-﻿using KaloriNetProject.Models;
+﻿using BusinessLayer.Abstract;
+using KaloriNetProject.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -13,6 +14,7 @@ namespace KaloriNetProject.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
+       
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;

@@ -8,8 +8,7 @@ using System.Threading.Tasks;
 namespace EntityLayer.Concrete
 {
     public class Foods
-    {
-        [Key]
+    {[Key]
         public int FoodID { get; set; }
         public string FoodName { get; set; }
         public string FoodDescription  { get; set; }
@@ -20,7 +19,5 @@ namespace EntityLayer.Concrete
         public double FoodFat { get; set; }
         public string Foodamount{ get; set; }
         public string FoodImage { get; set; }
-        //public virtual Profil Profil { get; set; }
-
-    }
+  }
 }

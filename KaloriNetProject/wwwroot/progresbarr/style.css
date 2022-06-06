@@ -1,0 +1,52 @@
+body {
+    margin: 10px;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+  
+}
+ul {
+    list-style: none;
+}
+h2 {
+    margin: 0;
+}
+.progressbar-section {
+    padding: 40px 0;
+}
+.containerr {
+ 
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.skill-partfirst {
+
+}
+.skill-itemfirst {
+ 
+}
+.skill-part {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.skill-item {
+    -webkit-box-flex: 10;
+    -ms-flex: 20 20 55%;
+    flex: 15 0 25%;
+    max-width: 30%;
+    text-align: center;
+}
+.skill-item h2 {
+    font-size: 26px;
+    transform: translateY(-75px);
+}
+.sk-name {
+    font-weight: 800;
+    display: block;
+    transform: translateY(-25px);
+}
+

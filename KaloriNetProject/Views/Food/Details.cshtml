@@ -1,0 +1,198 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Product>
+@{
+    ViewData["Title"] = "ProductDetails";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <link href="~/KTema/assets/img/favicon.png" rel="icon">
+    <link href="~/KTema/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <script src="~/KTema/assets/vendor/bootstrap/js/bootstrap.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <link href="~/KTema/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="~/KTema/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/KTema/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/KTema/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/KTema/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="~/KTema/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="~/KTema/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <link href="~/KTema/assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <main id="main">
+
+        <section class="breadcrumbs">
+            <div class="container">
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <h2></h2>
+                    <ol>
+                        <li>
+                            <a href="/Food/Index">
+                                Kaç  Kalori
+                            </a>
+                        </li>
+
+                    </ol>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+
+    <main id="main">
+
+        <section id="portfolio-details" class="portfolio-details">
+            <div class="container">
+                @foreach (var item in Model)
+                {
+
+
+
+                    <div class="row gy-4">
+
+
+                        <div class="col-lg-8">
+                            <div class="portfolio-details-slider swiper">
+                                <div class="swiper-wrapper align-items-center">
+
+                                    <div class="swiper-slide">
+                                        <img src="@item.Image" alt="">
+                                    </div>
+
+
+                                </div>
+                                <div class="portfolio-description">
+                                    <h2>Detaylar</h2>
+                                    <div>
+                                        <input type="hidden" class="form-control" value="@item.carbo" id="karbonhidrat" placeholder="In centimeters">
+                                        <input type="hidden" class="form-control" value="@item.Protein" id="protein" placeholder="In centimeters">
+                                        <input type="hidden" class="form-control" value="@item.Fat" id="yag" placeholder="In centimeters">
+                                        <script type="text/javascript">
+                                            const pro = document.getElementById('protein');
+                                            const carbo = document.getElementById('karbonhidrat');
+                                            const ya = document.getElementById('yag');
+                                            window.onload = function () {
+                                                var chart = new CanvasJS.Chart("chartContainer",
+                                                    {
+                                                        title: {
+
+                                                            fontFamily: "Impact",
+                                                            fontWeight: "normal"
+                                                        },
+
+                                                        legend: {
+                                                            verticalAlign: "bottom",
+                                                            horizontalAlign: "center"
+                                                        },
+                                                        data: [
+                                                            {
+                                                                //startAngle: 45,
+                                                                indexLabelFontSize: 20,
+                                                                indexLabelFontFamily: "Garamond",
+                                                                indexLabelFontColor: "darkgrey",
+                                                                indexLabelLineColor: "darkgrey",
+                                                                indexLabelPlacement: "outside",
+                                                                type: "doughnut",
+                                                                showInLegend: true,
+                                                                dataPoints: [
+                                                                    { y: carbo.value, legendText: carbo.value, indexLabel: "karbonhidrat" },
+                                                                    { y: pro.value, legendText: pro.value, indexLabel: "protein" },
+                                                                    { y: ya.value, legendText: ya.value, indexLabel: "yağ" },
+
+                                                                ]
+                                                            }
+                                                        ]
+                                                    });
+
+                                                chart.render();
+                                            }
+                                        </script>
+                                        <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+                                        <div id="chartContainer" style="height: 300px; width: 100%;">
+                                        </div>
+
+
+
+                                    </div>
+
+                                </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="portfolio-info">
+                                <h3>@item.Name Besin Değeri</h3>
+
+                                <ul>
+                                    <li><strong>Kalori</strong>: @item.Calorie kcal</li>
+                                    <li><strong>Miktar</strong>:@item.amount</li>
+                                    <li><strong> Karbonhidrat</strong>:   % @item.carbo</li>
+                                    <li><strong>Protein</strong>:   %@item.Protein</li>
+                                    <li><strong>  Yağ</strong>:   % @item.Fat</li>
+
+                                </ul>
+                                <h3 class="card-title"><a href="/Food/FoodCalorieBurn/@item.ID">Nasil Yakarım ?</a></h3>
+
+
+                            </div>
+                            <div class="portfolio-description">
+                                <h2>  Hakkında</h2>
+                                <p>
+                                    @item.Description
+                                </p>
+                            </div>
+                            <div class="portfolio-description">
+                                <h2> Ne Siklikla</h2>
+                                <p>
+                                    @item.Description
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+            }
+            </div>
+        </section>
+    </main>
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <script src="~/KTema/assets/vendor/purecounter/purecounter.js"></script>
+    <script src="~/KTema/assets/vendor/aos/aos.js"></script>
+    <script src="~/KTema/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/KTema/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="~/KTema/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="~/KTema/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="~/KTema/assets/vendor/php-email-form/validate.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/calisma.js"></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
